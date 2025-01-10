@@ -8,6 +8,9 @@ uci add dhcp domain
 uci set "dhcp.@domain[-1].name=time.android.com"
 uci set "dhcp.@domain[-1].ip=203.107.6.88"
 
+pppoe_username="13438983004"
+pppoe_password="983004"
+
 
 # 根据网卡数量配置网络
 count=0
@@ -24,6 +27,15 @@ if [ "$count" -eq 1 ]; then
   uci set network.lan.proto='dhcp'
 elif [ "$count" -gt 1 ]; then
   uci set network.lan.ipaddr='10.0.88.1'
+fi
+
+# Configure PPPoE
+# More options: https://openwrt.org/docs/guide-user/network/wan/wan_interface_protocols#protocol_pppoe_ppp_over_ethernet
+if [ -n "$pppoe_username" -a "$pppoe_password" ]; then
+  uci set network.wan.proto=pppoe
+  uci set network.wan.username="$pppoe_username"
+  uci set network.wan.password="$pppoe_password"
+  uci commit network
 fi
 
 # 设置所有网口可访问网页终端

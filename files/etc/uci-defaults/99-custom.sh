@@ -11,10 +11,6 @@ uci add dhcp domain
 uci set "dhcp.@domain[-1].name=time.android.com"
 uci set "dhcp.@domain[-1].ip=203.107.6.88"
 
-
-pppoe_account="13438983004"
-pppoe_password="983004"
-
 # 计算网卡数量
 count=0
 for iface in /sys/class/net/*; do

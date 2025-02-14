@@ -12,6 +12,9 @@ uci set "dhcp.@domain[-1].name=time.android.com"
 uci set "dhcp.@domain[-1].ip=203.107.6.88"
 
 
+pppoe_account="13438983004"
+pppoe_password="983004"
+
 # 计算网卡数量
 count=0
 for iface in /sys/class/net/*; do
@@ -38,7 +41,7 @@ if [ "$count" -eq 1 ]; then
    uci set network.lan.proto='dhcp'
 elif [ "$count" -gt 1 ]; then
    # 多网口设备 支持修改为别的ip地址
-   uci set network.lan.ipaddr='192.168.100.1'
+   uci set network.lan.ipaddr='10.0.88.1'
    echo "set 192.168.100.1 at $(date)" >> $LOGFILE
    # 判断是否启用 PPPoE
    echo "print enable_pppoe value=== $enable_pppoe" >> $LOGFILE

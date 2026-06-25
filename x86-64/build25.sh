@@ -55,7 +55,13 @@ PACKAGES="$PACKAGES luci-i18n-argon-config-zh-cn"
 #25.12
 PACKAGES="$PACKAGES luci-i18n-package-manager-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
-PACKAGES="$PACKAGES openssh-sftp-server"
+PACKAGES="$PACKAGES luci-app-openclash"
+PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-ddns-go-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-ksmbd-zh-cn"
+PACKAGES="$PACKAGES luci-proto-wireguard"
+PACKAGES="$PACKAGES luci-i18n-watchcat-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-udpxy-zh-cn"
 
 # 文件管理器
 PACKAGES="$PACKAGES luci-i18n-filemanager-zh-cn"
